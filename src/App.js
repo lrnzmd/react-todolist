@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
   return (
+    <div>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+    </div>
     </div>
   );
 }
