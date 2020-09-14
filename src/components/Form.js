@@ -3,6 +3,8 @@ import React from 'react';
 
 
 const Form = ({setInputText, todos, setTodos, inputText}) => {
+   
+   
     const inputTextHeandler = (e) =>{
         setInputText(e.target.value)
     };
@@ -13,13 +15,21 @@ const Form = ({setInputText, todos, setTodos, inputText}) => {
             ...todos, 
             {text: inputText, completed: false, id: Math.random()*1000}
         ])
+        setInputText("")
     }
     
     return(
     <form>
-      <input onChange={inputTextHeandler} type="text" className="todo-input" />
-      <button onClick={submitTodoHandler} className="todo-button" type="submit">
-        <i className="fas fa-plus-square"></i>
+      <input 
+            value={inputText}
+            onChange={inputTextHeandler} 
+            type="text" 
+            className="todo-input" />
+      <button 
+            onClick={submitTodoHandler} 
+            className="todo-button" 
+            type="submit">
+            <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
         <select name="todos" className="filter-todo">
